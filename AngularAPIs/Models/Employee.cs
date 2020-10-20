@@ -9,19 +9,19 @@ namespace AngularAPIs.Models
     {
         public static List<Employee> Emps = new List<Employee>
         {
-            new Employee { id = 0, FirstName = "Fred", LastName = "Johnson", Department = "Accounting", Salary = 80000 },
-            new Employee { id = 1, FirstName = "Julie", LastName = "Smith", Department = "ID", Salary = 90000 },
-            new Employee { id = 2, FirstName = "George", LastName = "Washington", Department = "Management", Salary = 100000},
-            new Employee { id = 3, FirstName = "Abraham", LastName = "Lincoln", Department = "Management", Salary = 110000},
-            new Employee { id = 4, FirstName = "Paul", LastName = "McCartney", Department = "Music", Salary = 10000000},
-            new Employee { id = 5, FirstName = "Ringo", LastName = "Starr", Department = "Music", Salary = 900000}
+            new Employee { id = 0, firstName = "Fred", lastName = "Johnson", department = "Accounting", salary = 80000 },
+            new Employee { id = 1, firstName = "Julie", lastName = "Smith", department = "ID", salary = 90000 },
+            new Employee { id = 2, firstName = "George", lastName = "Washington", department = "Management", salary = 100000},
+            new Employee { id = 3, firstName = "Abraham", lastName = "Lincoln", department = "Management", salary = 110000},
+            new Employee { id = 4, firstName = "Paul", lastName = "McCartney", department = "Music", salary = 10000000},
+            new Employee { id = 5, firstName = "Ringo", lastName = "Starr", department = "Music", salary = 900000}
         };
 
         public long? id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Department { get; set; }
-        public decimal Salary { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string department { get; set; }
+        public decimal salary { get; set; }
 
         // Quick search function to mimic select where ID
         public static Employee findById(long? id)
@@ -41,10 +41,10 @@ namespace AngularAPIs.Models
             Employee found = Employee.findById(emp.id);
             if (found != null)
             {
-                found.FirstName = emp.FirstName;
-                found.LastName = emp.LastName;
-                found.Salary = emp.Salary;
-                found.Department = emp.Department;
+                found.firstName = emp.firstName;
+                found.lastName = emp.lastName;
+                found.salary = emp.salary;
+                found.department = emp.department;
             }
             else
             {

@@ -24,11 +24,17 @@ namespace AngularAPIs.Controllers
             return Employee.findById(id);
         }
 
-        [HttpPost]
-        public Employee Post(Employee emp)
+        [HttpPost("create")]
+        public Employee Create(Employee emp)
         {
+            emp.id = null;
             return Employee.Update(emp);
         }
 
+        [HttpPost("update")]
+        public Employee Update(Employee emp)
+        {
+            return Employee.Update(emp);
+        }
     }
 }

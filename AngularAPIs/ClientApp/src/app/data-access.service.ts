@@ -19,15 +19,17 @@ export class DataAccessService {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
-  // This is for creating, but we use the same API call as updating
-  createEmployee(emp) {
-    return this.http.post<Employee>(this.apiUrl, emp);
+  // TODO: I'll find out why the C# end isn't automatically converting
+  createEmployee(emp: Employee) {
+    emp.id = 0;
+    emp.salary = Number(emp.salary);
+    return this.http.post<Employee>(this.apiUrl + '/create', emp);
   }
 
-  // This is for updating, but we use the same API call as creating
-  // These could be one function, maybe call it Save.
-  updateEmployee(emp) {
-    return this.http.post<Employee>(this.apiUrl, emp);
+  updateEmployee(emp: Employee) {
+    emp.id = Number(emp.id);
+    emp.salary = Number(emp.salary);
+    return this.http.post<Employee>(this.apiUrl + '/update', emp);
   }
 
 }

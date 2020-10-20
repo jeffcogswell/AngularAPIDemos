@@ -1,0 +1,16 @@
+<h1>Quick Form Demo and Test</h1>
+<p>Try clicking the "Load Record #5" button to load the data for record #5. Try changing anything but the ID, and click Update to update that record.</p>
+<p>Or fill in a brand new record, and click Create. The record will get saved, and the ID will get populated automatically.</p>
+
+<button (click)="loadRecord(5)">Load Record #5</button>
+<div>
+  ID: <input [(ngModel)]="emp.id" type="text" /><br />
+  First Name: <input [(ngModel)]="emp.firstName" type="text" /><br />
+  Last Name: <input [(ngModel)]="emp.lastName" type="text" /><br />
+  Department: <input [(ngModel)]="emp.department" type="text" /><br />
+  Salary: <input [(ngModel)]="emp.salary" type="text" />
+  <br />
+  <button (click)="doCreate()">Create</button><br />
+  <button (click)="doUpdate()">Update</button>
+
+</div>
